@@ -1,16 +1,27 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import App from './App';
 import {shallow, ShallowWrapper} from 'enzyme';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
 
-it('should have Holiday as default title', () => {
-    const shallowWrapper: ShallowWrapper = shallow(<App/>);
+describe('App', () => {
 
-    expect(shallowWrapper.state('title')).toBe('Holiday');
+    let wrapper: ShallowWrapper;
+
+    beforeEach(() => {
+        wrapper = shallow(<App/>);
+    });
+
+    it('should match snapshot', () => {
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    describe('default state', () => {
+        it('should have Holiday as default title', () => {
+            expect(wrapper.state('title')).toBe('Holiday');
+        });
+
+        it('should have no user by default', () => {
+            expect(wrapper.state('user')).toBeUndefined();
+        });
+    });
 });
