@@ -7,10 +7,10 @@ describe('TopBar', () => {
     let wrapper: ShallowWrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<TopBar title="someTitle"/>)
+        wrapper = shallow(<TopBar title="someTitle"/>);
     });
 
     it('should match snapshot', () => {
-        expect(wrapper).toMatchSnapshot()
+        expect(wrapper).toMatchSnapshot();
     });
 });

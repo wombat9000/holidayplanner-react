@@ -3,7 +3,6 @@ import * as React from 'react';
 import './App.css';
 import TopBar from './common/TopBar';
 
-
 class App extends React.Component<any, State> {
     constructor(props: any) {
         super(props);

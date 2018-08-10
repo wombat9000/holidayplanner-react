@@ -1,7 +1,33 @@
 {
-  "extends": [],
+  "rules": {
+    "only-arrow-functions": true,
+    "curly": true,
+    "no-duplicate-super": true,
+    "no-trailing-whitespace": true,
+    "trailing-comma": false,
+    "prefer-const": true,
+    "no-duplicate-imports": true,
+    "triple-equals": true,
+    "switch-default": true,
+    "no-return-await": true,
+    "restrict-plus-operands": true,
+    "no-var-keyword": true,
+    "no-unused-expression": true,
+    "no-unused-variable": true,
+    "no-this-assignment": true,
+    "no-floating-promises": true,
+    "no-require-imports": true,
+    "prefer-readonly": true,
+
+    // style
+    "no-boolean-literal-compare": true,
+    "no-consecutive-blank-lines": true,
+    "quotemark": [true, "single", "jsx-double"],
+    "semicolon": [true, "always"]
+  },
   "linterOptions": {
     "exclude": [
+      "src/registerServiceWorker.ts",
       "config/**/*.js",
       "node_modules/**/*.ts",
       "coverage/lcov-report/*.js"

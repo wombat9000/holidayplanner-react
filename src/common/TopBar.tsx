@@ -1,7 +1,6 @@
 import {AppBar, Toolbar, Typography} from '@material-ui/core';
 import * as React from 'react';
 
-
 class TopBar extends React.Component<Props> {
     constructor(props: any) {
         super(props);
@@ -9,13 +8,13 @@ class TopBar extends React.Component<Props> {
 
     public render() {
         return (
-                <AppBar position="static">
-                    <Toolbar variant="dense">
-                        <Typography variant="title" color="inherit">
-                            {this.props.title}
-                        </Typography>
-                    </Toolbar>
-                </AppBar>
+            <AppBar position="static">
+                <Toolbar variant="dense">
+                    <Typography variant="title" color="inherit">
+                        {this.props.title}
+                    </Typography>
+                </Toolbar>
+            </AppBar>
         );
     }
 }
