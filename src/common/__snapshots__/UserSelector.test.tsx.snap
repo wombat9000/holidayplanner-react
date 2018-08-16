@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserSelector inside context user is absent should match snapshot 1`] = `
+<Select
+  IconComponent={[Function]}
+  autoWidth={false}
+  className="flex-right"
+  classes={
+    Object {
+      "disabled": "MuiSelect-disabled-4",
+      "icon": "MuiSelect-icon-5",
+      "root": "MuiSelect-root-1",
+      "select": "MuiSelect-select-2",
+      "selectMenu": "MuiSelect-selectMenu-3",
+    }
+  }
+  data-qa="select"
+  displayEmpty={false}
+  input={<WithStyles(Input) />}
+  multiple={false}
+  native={false}
+  onChange={[Function]}
+  value=""
+>
+  <WithStyles(MenuItem)
+    value=""
+  >
+    <em>
+      None
+    </em>
+  </WithStyles(MenuItem)>
+  <WithStyles(MenuItem)
+    value="Wombat"
+  >
+    Wombat
+  </WithStyles(MenuItem)>
+  <WithStyles(MenuItem)
+    value="Moose"
+  >
+    Moose
+  </WithStyles(MenuItem)>
+</Select>
+`;
+
+exports[`UserSelector inside context user is present should match snapshot 1`] = `
+<Select
+  IconComponent={[Function]}
+  autoWidth={false}
+  className="flex-right"
+  classes={
+    Object {
+      "disabled": "MuiSelect-disabled-4",
+      "icon": "MuiSelect-icon-5",
+      "root": "MuiSelect-root-1",
+      "select": "MuiSelect-select-2",
+      "selectMenu": "MuiSelect-selectMenu-3",
+    }
+  }
+  data-qa="select"
+  displayEmpty={false}
+  input={<WithStyles(Input) />}
+  multiple={false}
+  native={false}
+  onChange={[Function]}
+  value="wombat"
+>
+  <WithStyles(MenuItem)
+    value=""
+  >
+    <em>
+      None
+    </em>
+  </WithStyles(MenuItem)>
+  <WithStyles(MenuItem)
+    value="Wombat"
+  >
+    Wombat
+  </WithStyles(MenuItem)>
+  <WithStyles(MenuItem)
+    value="Moose"
+  >
+    Moose
+  </WithStyles(MenuItem)>
+</Select>
+`;
+
+exports[`UserSelector should match snapshot 1`] = `<[object Object] />`;
