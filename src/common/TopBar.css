@@ -1,0 +1,9 @@
+.TopBar {
+    text-align: left;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.flex {
+    flex-grow: 1;
+}

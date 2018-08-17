@@ -2,10 +2,9 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import * as React from 'react';
 import './App.css';
 import TopBar from './common/TopBar';
-import {Route, Switch} from 'react-router';
-import {UserSelect} from './user-select/UserSelect';
 import {AppUser} from './models';
 import {UserContext} from './UserContext';
+import {PlanningOverview} from './planning-overview/PlanningOverview';
 
 class App extends React.Component<any, State> {
     constructor(props: any) {
@@ -28,10 +27,8 @@ class App extends React.Component<any, State> {
             <div className="App">
                 <UserContext.Provider value={this.state.user}>
                     <CssBaseline/>
-                    <TopBar title={this.state.title}/>
-                    <Switch>
-                        <Route render={() => (<UserSelect onUserSelect={this.setUser}/>)}/>
-                    </Switch>
+                    <TopBar title={this.state.title} setUserHandler={this.setUser}/>
+                    {this.state.user ? <PlanningOverview/> : null}
                 </UserContext.Provider>
             </div>
         );

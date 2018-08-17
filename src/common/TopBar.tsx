@@ -1,5 +1,8 @@
 import {AppBar, Toolbar, Typography} from '@material-ui/core';
 import * as React from 'react';
+import './TopBar.css';
+import {AppUser} from '../models';
+import {UserSelector} from './UserSelector';
 
 class TopBar extends React.Component<Props> {
     constructor(props: any) {
@@ -8,19 +11,23 @@ class TopBar extends React.Component<Props> {
 
     public render() {
         return (
-            <AppBar position="static">
-                <Toolbar variant="dense">
-                    <Typography variant="title" color="inherit">
-                        {this.props.title}
-                    </Typography>
-                </Toolbar>
-            </AppBar>
+            <div className="TopBar">
+                <AppBar position="static">
+                    <Toolbar>
+                        <Typography variant="title" color="inherit" className="flex">
+                            {this.props.title}
+                        </Typography>
+                        <UserSelector setUserHandler={this.props.setUserHandler}/>
+                    </Toolbar>
+                </AppBar>
+            </div>
         );
     }
 }
 
 interface Props {
     title: string;
+    setUserHandler: (user: AppUser) => void;
 }
 
 export default TopBar;

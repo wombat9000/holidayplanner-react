@@ -1,9 +1,7 @@
 import * as React from 'react';
 import App from './App';
-import {mount, ReactWrapper, shallow, ShallowWrapper} from 'enzyme';
-import {UserSelect} from './user-select/UserSelect';
-import {AppUser} from './models';
-import {MemoryRouter} from 'react-router';
+import {shallow, ShallowWrapper} from 'enzyme';
+import {PlanningOverview} from './planning-overview/PlanningOverview';
 
 describe('App', () => {
     let wrapper: ShallowWrapper;
@@ -24,28 +22,19 @@ describe('App', () => {
         it('should have no user by default', () => {
             expect(wrapper.state('user')).toBeUndefined();
         });
-    });
-});
 
-xdescribe('Routing', () => {
-    let wrapper: ReactWrapper;
-
-    beforeEach(() => {
-        wrapper = mount(<MemoryRouter><App/></MemoryRouter>);
+        it('should not show planning page while no user is selected', () => {
+            expect(wrapper.find(PlanningOverview).exists()).toBeFalsy();
+        });
     });
 
-    describe('Default', () => {
-        it('should update user state', () => {
-            const userSelect = wrapper.find(UserSelect);
-            const eventHandler: (user: AppUser) => void = userSelect.prop('onUserSelect');
+    describe('a user is selected', () => {
+        beforeEach(() => {
+            wrapper.setState({user: {displayName: 'wombat'}});
+        });
 
-            const someUser: AppUser = {
-                displayName: 'The Wombat'
-            };
-
-            eventHandler(someUser);
-            wrapper.update();
-            expect(wrapper.find('h1.greeting').exists()).toBeTruthy();
+        it('should show planning page', () => {
+            expect(wrapper.find(PlanningOverview).exists()).toBeTruthy();
         });
     });
 });
